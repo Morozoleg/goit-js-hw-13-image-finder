@@ -9,7 +9,7 @@ function searchFormSabmitHandler(event) {
   event.preventDefault();
   const form = event.currentTarget;
   api.query = form.elements.query.value;
-  //   refs.loadMoreBtn.classList.remove('is-hidden');
+  hideLoadBtn();
   api.resetPage();
   clearContainer();
   fetchGallery();
@@ -29,6 +29,10 @@ function clearContainer() {
 }
 function showLoadBtn() {
   refs.loadMoreBtn.classList.remove('is-hidden');
+}
+
+function hideLoadBtn() {
+  refs.loadMoreBtn.classList.add('is-hidden');
 }
 
 function windowScroll() {
